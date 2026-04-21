@@ -13,6 +13,8 @@ export interface Product {
   whatsappMsg: string;
   category: 'velvet' | 'specialty';
   featured?: boolean;
+  /** Shade card / product photos served from /public/materials/... */
+  images?: string[];
 }
 
 export const PRODUCTS: Product[] = [
@@ -30,6 +32,7 @@ export const PRODUCTS: Product[] = [
     whatsappMsg: "Hello SN Fabrics! I'm interested in *Makhan Velvet (Single Tone, 44')* — ultra-soft, buttery feel. Could you please share availability, colours and pricing? Thank you!",
     category: 'velvet',
     featured: true,
+    images: ['/materials/makhan/Makhan.jpg', '/materials/makhan/Makhan2.jpg'],
   },
   {
     id: 2,
@@ -45,6 +48,7 @@ export const PRODUCTS: Product[] = [
     whatsappMsg: "Hello SN Fabrics! I'm interested in *Micro Velvet 9000 (Single Tone)* — lightweight 100% polyester velvet. Could you please share available shades, width (44'/54') and current pricing? Thank you!",
     category: 'velvet',
     featured: true,
+    images: ['/materials/9000/1.jpg', '/materials/9000/2.jpg'],
   },
   {
     id: 3,
@@ -58,6 +62,7 @@ export const PRODUCTS: Product[] = [
     usedFor: 'Occasion Wear, Drapes, High-End Garments',
     whatsappMsg: "Hello SN Fabrics! I'm interested in *Micro Velvet 9000 Crush (44')* — crushed finish velvet with rich texture. Could you please share available colours and pricing? Thank you!",
     category: 'velvet',
+    images: [],
   },
   {
     id: 4,
@@ -114,6 +119,7 @@ export const PRODUCTS: Product[] = [
     usedFor: 'Statement Outfits, Designer Collections',
     whatsappMsg: "Hello SN Fabrics! I'm interested in *Velvet 99999 Crush (Single Tone, 44')* — premium crushed velvet. Could you please share colour availability, min. order quantity and pricing? Thank you!",
     category: 'velvet',
+    images: ['/materials/velvet-99999-crush/99999crush.jpg'],
   },
   {
     id: 8,
@@ -127,20 +133,30 @@ export const PRODUCTS: Product[] = [
     usedFor: 'Festive Wear, Couture, Bridal',
     whatsappMsg: "Hello SN Fabrics! I'm interested in *Velvet Embroidery Work (44')* — intricate craftsmanship on velvet. Could you please share design catalogue and pricing? Thank you!",
     category: 'velvet',
+    images: ['/materials/velvet-work/Velvet-Work.png'],
   },
   {
     id: 9,
-    slug: 'fendy',
-    name: 'Fendy (NC Satin)',
-    websiteName: 'Fendy — NC Satin',
-    description: 'Inspired by the iconic aesthetic of Fendi, this fabric features bold patterns, signature motifs, and a premium finish. Designed for modern, fashion-forward creations combining global luxury with versatile usability.',
-    qualityDescription: 'Bold patterns, premium satin finish, fashion-forward',
+    slug: 'fendi',
+    name: 'Fendi',
+    websiteName: 'Fendi — Printed NC Satin',
+    description: 'Fendi fabric is a premium printed material inspired by the iconic Fendi house signature — featuring bold interlocking FF motifs, geometric brocade patterns, and a rich satin-like finish. Widely loved in Indian fashion markets for its luxurious look at an accessible price point, it drapes beautifully and photographs exceptionally well.',
+    qualityDescription: 'Iconic FF-inspired print on smooth satin base — rich, photo-ready finish',
     weight: '9 kg',
     priceRange: '₹42–44/mtr',
     width: "44'",
-    usedFor: 'Modern Garments, Statement Pieces',
-    whatsappMsg: "Hello SN Fabrics! I'm interested in *Fendy / NC Satin (44')* — bold patterns and premium finish. Could you please share available motifs and pricing? Thank you!",
+    usedFor: 'Kurtis, Tops, Blouses, Dupattas, Modern Ethnic Wear',
+    whatsappMsg: "Hello SN Fabrics! I'm interested in *Fendi Fabric (Printed NC Satin, 44')* — the iconic FF-motif patterned fabric. Could you please share available print variants, colours, and current pricing? Thank you!",
     category: 'specialty',
+    featured: true,
+    images: [
+      '/materials/fendi/f1.png',
+      '/materials/fendi/F2.png',
+      '/materials/fendi/F3.png',
+      '/materials/fendi/F4.png',
+      '/materials/fendi/F5.png',
+      '/materials/fendi/F6.png',
+    ],
   },
   {
     id: 10,

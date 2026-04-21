@@ -61,7 +61,7 @@ export default function Navbar() {
               alt="S N Fabrics Logo"
               width={160}
               height={48}
-              style={{ objectFit: 'contain', height: '48px', width: 'auto' }}
+              style={{ objectFit: 'contain', width: 'auto' }}
               priority
             />
           </Link>
