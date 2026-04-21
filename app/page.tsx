@@ -3,7 +3,8 @@ import TrustBar from '@/components/TrustBar';
 import Testimonials from '@/components/Testimonials';
 import ProductCard from '@/components/ProductCard';
 import Link from 'next/link';
-import { PRODUCTS } from '@/lib/products';
+import { mapDatabaseProduct } from '@/lib/products';
+import { adminSupabase } from '@/lib/supabase/admin';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -13,8 +14,17 @@ export const metadata: Metadata = {
   keywords: 'SN Fabrics, premium velvet fabric, Surat textile, Makhan velvet, wholesale fabric, fabric exporter India',
 };
 
-export default function HomePage() {
-  const featured = PRODUCTS.filter((p) => p.featured).slice(0, 3);
+export const dynamic = 'force-dynamic';
+
+export default async function HomePage() {
+  const { data: dbProducts } = await adminSupabase
+    .from('products')
+    .select('*, product_images(url)')
+    .eq('featured', true)
+    .order('sort_order', { ascending: true })
+    .limit(3);
+
+  const featured = dbProducts?.map(mapDatabaseProduct) ?? [];
 
   return (
     <main>
@@ -100,7 +110,7 @@ export default function HomePage() {
 
           <div style={{ textAlign: 'center' }}>
             <Link href="/products" className="btn-maroon">
-              View All 10 Fabrics →
+              View All Fabrics →
             </Link>
           </div>
         </div>

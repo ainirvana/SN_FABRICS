@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import ProductCard from '@/components/ProductCard';
-import { PRODUCTS } from '@/lib/products';
+import { mapDatabaseProduct } from '@/lib/products';
+import { adminSupabase } from '@/lib/supabase/admin';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -8,16 +9,23 @@ export const metadata: Metadata = {
   description: 'Explore our complete fabric range: Makhan Velvet, 9000, 11000, Ice Velvet, 99999, Fendy, Sindoor and more. Sample kits available on request.',
 };
 
+export const dynamic = 'force-dynamic';
+
 const heroBg = 'linear-gradient(135deg, #2e1820 0%, #432430 60%, #5c3242 100%)';
 const hexPattern = `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 20 L55 40 L30 55 L5 40 L5 20 Z' fill='none' stroke='rgba(255,204,69,0.05)' stroke-width='1'/%3E%3C/svg%3E")`;
 
-export default function ProductsPage() {
-  const velvets = PRODUCTS.filter((p) => p.category === 'velvet');
-  const specialty = PRODUCTS.filter((p) => p.category === 'specialty');
+export default async function ProductsPage() {
+  const { data: dbProducts } = await adminSupabase
+    .from('products')
+    .select('*, product_images(url)')
+    .order('sort_order', { ascending: true });
+
+  const products = dbProducts?.map(mapDatabaseProduct) ?? [];
+  const velvets = products.filter((p) => p.category === 'velvet');
+  const specialty = products.filter((p) => p.category === 'specialty');
 
   return (
     <main style={{ paddingTop: '72px' }}>
-
       {/* ── Hero ──────────────────────────────────────── */}
       <section style={{ background: heroBg, padding: '100px 0 80px', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, backgroundImage: hexPattern, backgroundSize: '60px 60px', pointerEvents: 'none' }} />
