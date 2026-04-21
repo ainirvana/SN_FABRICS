@@ -1,26 +1,258 @@
 @import "tailwindcss";
 
+/* ─── Brand Palette ───────────────────────────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --maroon:        #432430;
+  --maroon-dark:   #2e1820;
+  --maroon-light:  #5c3242;
+  --gold:          #ffcc45;
+  --gold-muted:    #e6b53d;
+  --peach:         #ffd699;
+  --cream:         #fff0dd;
+  --cream-dark:    #f5dfc0;
+  --white:         #ffffff;
+  --text-on-dark:  #fff0dd;
+  --text-muted:    #c9a47e;
+  --surface:       #3a1e2b;
+  --surface-light: #4d2839;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@theme {
+  --color-maroon:       var(--maroon);
+  --color-maroon-dark:  var(--maroon-dark);
+  --color-maroon-light: var(--maroon-light);
+  --color-gold:         var(--gold);
+  --color-gold-muted:   var(--gold-muted);
+  --color-peach:        var(--peach);
+  --color-cream:        var(--cream);
+  --color-cream-dark:   var(--cream-dark);
+  --color-surface:      var(--surface);
+  --color-surface-light: var(--surface-light);
+  --color-text-muted:   var(--text-muted);
+
+  --font-sans:  var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ─── Base Reset ─────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--cream);
+  color: var(--maroon);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  overscroll-behavior-x: none;
+  line-height: 1.6;
+  cursor: auto;
 }
+
+::selection {
+  background: var(--gold);
+  color: var(--maroon-dark);
+}
+
+/* ─── Typography ─────────────────────────────────────────────────── */
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+/* ─── Gradient Utilities ─────────────────────────────────────────── */
+.gradient-gold {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--peach) 100%);
+}
+
+.gradient-maroon {
+  background: linear-gradient(135deg, var(--maroon-dark) 0%, var(--maroon) 60%, var(--maroon-light) 100%);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--peach) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Keyframes ──────────────────────────────────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes shimmer {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(200%);  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 204, 69, 0.4); }
+  50%       { box-shadow: 0 0 0 12px rgba(255, 204, 69, 0); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0);      }
+}
+
+/* ─── Utility Classes ────────────────────────────────────────────── */
+.animate-fadeInUp   { animation: fadeInUp 0.7s ease forwards; }
+.animate-fadeIn     { animation: fadeIn 0.5s ease forwards;   }
+.animate-float      { animation: float 3s ease-in-out infinite; }
+.animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+.animate-spin-slow  { animation: spin-slow 8s linear infinite; }
+.animate-shimmer    { animation: shimmer 2.5s infinite; }
+.animate-slideDown  { animation: slideDown 0.3s ease forwards; }
+
+/* ─── Card glow effect ───────────────────────────────────────────── */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(67, 36, 48, 0.25);
+}
+
+/* ─── Gold shimmer line ──────────────────────────────────────────── */
+.gold-line {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  width: 80px;
+  margin: 0 auto;
+}
+
+/* ─── WhatsApp floating button ───────────────────────────────────── */
+.whatsapp-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 9999;
+  animation: float 3s ease-in-out infinite, pulse-glow 2s ease-in-out infinite;
+}
+
+/* ─── Section padding ────────────────────────────────────────────── */
+.section-pad {
+  padding: 80px 0;
+}
+
+@media (max-width: 768px) {
+  .section-pad { padding: 48px 0; }
+}
+
+/* ─── Hover utility classes (for use in server components) ───────── */
+.btn-gold {
+  background-color: var(--gold);
+  color: var(--maroon-dark);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 36px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  border: none;
+  cursor: pointer;
+}
+.btn-gold:hover {
+  background-color: var(--peach);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(255,204,69,0.4);
+}
+
+.btn-maroon {
+  background-color: var(--maroon);
+  color: var(--cream);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 36px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+.btn-maroon:hover {
+  background-color: var(--maroon-light);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--cream);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 36px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid rgba(255,240,221,0.4);
+  transition: all 0.25s ease;
+}
+.btn-outline:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.btn-whatsapp {
+  background-color: #25d366;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 36px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+.btn-whatsapp:hover {
+  background-color: #1da851;
+  transform: translateY(-2px);
+}
+
+.link-hover:hover {
+  color: var(--gold) !important;
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--cream-dark); }
+::-webkit-scrollbar-thumb { background: var(--maroon); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--maroon-light); }
