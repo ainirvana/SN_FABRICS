@@ -1,5 +1,5 @@
 -- ======================================================
--- SN Fabrics — Supabase Schema
+-- S N Fabrics — Supabase Schema
 -- Run this entire file in Supabase SQL Editor ONCE
 -- Dashboard → SQL Editor → New Query → Paste → Run
 -- ======================================================
@@ -46,7 +46,7 @@ create table if not exists public.blogs (
   content              text not null default '',
   cover_url            text,
   cover_storage_path   text,
-  author               text not null default 'SN Fabrics',
+  author               text not null default 'S N Fabrics',
   tags                 text[] not null default '{}',
   read_time            text not null default '5 min read',
   status               text not null default 'draft' check (status in ('draft', 'published')),

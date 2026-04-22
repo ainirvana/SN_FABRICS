@@ -50,7 +50,7 @@ export default function ContactPage() {
   };
 
   const buildWAMessage = () =>
-    `Hello SN Fabrics! I want to place a bulk order inquiry.\n\n*Name:* ${form.name}\n*Country:* ${form.country}\n*Mobile:* ${form.mobile}\n*Email:* ${form.email}\n*Product Looking For:* ${form.product}\n*Message:* ${form.message || 'Please share availability and pricing.'}\n\nLooking forward to hearing from you!`;
+    `Hello S N Fabrics! I want to place a bulk order inquiry.\n\n*Name:* ${form.name}\n*Country:* ${form.country}\n*Mobile:* ${form.mobile}\n*Email:* ${form.email}\n*Product Looking For:* ${form.product}\n*Message:* ${form.message || 'Please share availability and pricing.'}\n\nLooking forward to hearing from you!`;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -93,7 +93,7 @@ export default function ContactPage() {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                   {[
                     { icon: '📞', label: 'Mobile', value: '+91 98251 54197', href: 'tel:+919825154197' },
-                    { icon: '📍', label: 'Address', value: 'UG-128-129, Shree Kuber Ji Textile World, Puna Kumbhariya Road, Kumbharia Gaon, Surat — 395010, Gujarat', href: 'https://maps.google.com/?q=Shree+Kuber+Ji+Textile+World+Surat' },
+                    { icon: '📍', label: 'Address', value: 'UG-128-129, Shree Kuber Ji Textile World, Puna Kumbhariya Road, Kumbharia Gaon, Surat — 395010, Gujarat', href: 'https://www.google.com/maps?vet=10CAAQoqAOahcKEwjo9rqB8oGUAxUAAAAAHQAAAAAQBg..i&pvq=Cg0vZy8xMXo1N19uaDI4IhAKCnNuIGZhYnJpY3MQAhgD&lqi=ChBzbiBmYWJyaWNzIHN1cmF0kgEbZmFicmljX3Byb2R1Y3RfbWFudWZhY3R1cmVy&fvr=1&cs=0&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=KWWQ1SjZT-A7Mf1uXRf1tp4X&daddr=129+Shree,+Textile+World,+Kuberji+House,+UG-128,+Kumbharia+Main+Rd,+Saroli,+Puna,+Surat,+Gujarat+395010' },
                     { icon: '🌍', label: 'Markets', value: 'Worldwide — Pan-India & Global Exports' },
                   ].map((item, i) => (
                     <div key={i} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>

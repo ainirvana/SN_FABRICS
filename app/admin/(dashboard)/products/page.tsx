@@ -18,6 +18,14 @@ export default async function AdminProductsPage() {
           </h1>
           <p style={{ fontSize: '0.875rem', color: '#888' }}>{products?.length ?? 0} products · Click any to edit or manage shade cards</p>
         </div>
+        <Link href="/admin/products/new" style={{
+          display: 'inline-flex', alignItems: 'center', gap: '8px',
+          background: '#432430', color: '#ffcc45', textDecoration: 'none',
+          padding: '11px 22px', borderRadius: '8px',
+          fontSize: '0.85rem', fontWeight: 700, letterSpacing: '0.05em',
+        }}>
+          ➕ New Product
+        </Link>
       </div>
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '16px' }}>

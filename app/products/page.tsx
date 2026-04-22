@@ -37,10 +37,6 @@ export default async function ProductsPage() {
           <p style={{ fontSize: '1.05rem', color: 'rgba(255,240,221,0.8)', lineHeight: 1.8, maxWidth: '600px', margin: '0 auto 32px' }}>
             From ultra-soft Makhan Velvet to bold Fendy prints — discover fabrics crafted for designers, retailers, and fashion creators.
           </p>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', backgroundColor: 'rgba(255,204,69,0.12)', border: '1px solid rgba(255,204,69,0.3)', borderRadius: '8px', padding: '12px 24px', fontSize: '0.85rem', color: '#ffd699' }}>
-            <span>📦</span>
-            <span>Sample kits available for all categories (on chargeable basis) — WhatsApp us to request</span>
-          </div>
         </div>
       </section>
 

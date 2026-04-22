@@ -6,21 +6,21 @@ const testimonials = [
     role: 'Boutique Owner, Mumbai',
     initials: 'PM',
     stars: 5,
-    text: 'The Makhan Velvet from SN Fabrics is absolutely stunning — buttery soft, consistent quality, and delivered on time every single order. My customers love every lehenga I make with it. Couldn\'t ask for a more reliable supplier.',
+    text: 'The Makhan Velvet from S N Fabrics is absolutely stunning — buttery soft, consistent quality, and delivered on time every single order. My customers love every lehenga I make with it. Couldn\'t ask for a more reliable supplier.',
   },
   {
     name: 'Rajesh Agarwal',
     role: 'Wholesale Dealer, Delhi',
     initials: 'RA',
     stars: 5,
-    text: 'I\'ve been sourcing 9000 velvet from SN Fabrics for over a year now. The quality is top-notch, pricing is fair, and Alok bhai is always responsive. The trust factor here is unmatched — transparent trade, no surprises.',
+    text: 'I\'ve been sourcing 9000 velvet from S N Fabrics for over a year now. The quality is top-notch, pricing is fair, and Alok bhai is always responsive. The trust factor here is unmatched — transparent trade, no surprises.',
   },
   {
     name: 'Fatima Al-Rashid',
-    role: 'Fashion Designer, Dubai',
+    role: 'Fashion Designer, Nepal',
     initials: 'FA',
     stars: 5,
-    text: 'As an international buyer, I needed a reliable exporter from Surat. SN Fabrics exceeded my expectations — their 11000 velvet and Fendy fabric are world-class. Smooth documentation, timely shipment, and premium packaging.',
+    text: 'As an international buyer, I needed a reliable exporter from Surat. S N Fabrics exceeded my expectations — their 11000 velvet and Fendy fabric are world-class. Smooth documentation, timely shipment, and premium packaging.',
   },
 ];
 

@@ -35,7 +35,7 @@ export default function AdminLoginPage() {
       }}>
         {/* Logo */}
         <div style={{ textAlign: 'center', marginBottom: '36px' }}>
-          <Image src="/logo.png" alt="SN Fabrics" width={140} height={42} style={{ width: 'auto', marginBottom: '16px' }} />
+          <Image src="/logo.png" alt="S N Fabrics" width={140} height={42} style={{ width: 'auto', marginBottom: '16px' }} />
           <p style={{ fontSize: '0.65rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#432430', fontWeight: 700 }}>
             ✦ Admin Panel
           </p>

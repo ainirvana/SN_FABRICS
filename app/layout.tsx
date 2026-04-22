@@ -17,11 +17,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'SN Fabrics | Premium Fabrics, Trusted Trade',
+  title: 'S N Fabrics | Premium Fabrics, Trusted Trade',
   description:
-    'SN Fabrics — a Surat-based premium textile trading house specialising in luxury velvets, Makhan, 9000, 11000 and more. Pan-India delivery, global exports.',
+    'S N Fabrics — a Surat-based premium textile trading house specialising in luxury velvets, Makhan, 9000, 11000 and more. Pan-India delivery, global exports.',
   keywords:
-    'SN Fabrics, premium velvet fabric, Surat textile, Makhan velvet, wholesale fabric, fabric exporter India',
+    'S N Fabrics, premium velvet fabric, Surat textile, Makhan velvet, wholesale fabric, fabric exporter India',
 };
 
 export default function RootLayout({

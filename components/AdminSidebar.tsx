@@ -37,7 +37,7 @@ export default function AdminSidebar() {
           ✦ Admin Panel
         </p>
         <p style={{ fontSize: '1rem', fontWeight: 700, color: '#fff0dd', fontFamily: 'var(--font-serif)' }}>
-          SN Fabrics
+          S N Fabrics
         </p>
       </div>
 

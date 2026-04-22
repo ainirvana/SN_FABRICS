@@ -79,6 +79,28 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
+            
+            <h3
+              style={{
+                fontSize: '0.75rem',
+                letterSpacing: '0.15em',
+                textTransform: 'uppercase',
+                color: 'var(--gold)',
+                marginBottom: '16px',
+                marginTop: '32px',
+                fontWeight: 700,
+              }}
+            >
+              Review Us
+            </h3>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              <a href="https://g.page/r/YOUR_GOOGLE_REVIEW_LINK" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-muted)', textDecoration: 'none', fontSize: '0.875rem' }}>
+                ⭐ Review us on Google
+              </a>
+              <a href="https://www.tradeindia.com/YOUR_TRADE_INDIA_LINK" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-muted)', textDecoration: 'none', fontSize: '0.875rem' }}>
+                🏢 Trade India Profile
+              </a>
+            </div>
           </div>
 
           {/* Contact */}
@@ -100,7 +122,25 @@ export default function Footer() {
               <a href="tel:+919825154197" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>
                 +91 98251 54197
               </a>
-              <p>UG-128-129, Shree Kuber Ji Textile World,<br />Puna Kumbhariya Road, Surat – 395010</p>
+              <a 
+                href="https://www.google.com/maps?vet=10CAAQoqAOahcKEwjo9rqB8oGUAxUAAAAAHQAAAAAQBg..i&pvq=Cg0vZy8xMXo1N19uaDI4IhAKCnNuIGZhYnJpY3MQAhgD&lqi=ChBzbiBmYWJyaWNzIHN1cmF0kgEbZmFicmljX3Byb2R1Y3RfbWFudWZhY3R1cmVy&fvr=1&cs=0&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=KWWQ1SjZT-A7Mf1uXRf1tp4X&daddr=129+Shree,+Textile+World,+Kuberji+House,+UG-128,+Kumbharia+Main+Rd,+Saroli,+Puna,+Surat,+Gujarat+395010"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ 
+                  color: 'var(--text-muted)', 
+                  textDecoration: 'none',
+                  transition: 'color 0.2s',
+                  display: 'inline-flex',
+                  alignItems: 'flex-start',
+                  gap: '6px',
+                  lineHeight: 1.5
+                }}
+                onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = 'var(--gold)')}
+                onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = 'var(--text-muted)')}
+              >
+                <span style={{ marginTop: '2px' }}>📍</span>
+                <span>UG-128-129, Shree Kuber Ji Textile World,<br />Puna Kumbhariya Road, Surat – 395010</span>
+              </a>
               <a
                 href="https://wa.me/919825154197"
                 target="_blank"

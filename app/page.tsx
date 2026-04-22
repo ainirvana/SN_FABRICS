@@ -8,10 +8,10 @@ import { adminSupabase } from '@/lib/supabase/admin';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'SN Fabrics | Premium Fabrics, Trusted Trade — Surat, India',
+  title: 'S N Fabrics | Premium Fabrics, Trusted Trade — Surat, India',
   description:
-    'SN Fabrics — Surat-based textile trading house specialising in luxury velvets, Makhan, 9000, 11000, Fendy, Sindoor and more. Pan-India delivery, global exports.',
-  keywords: 'SN Fabrics, premium velvet fabric, Surat textile, Makhan velvet, wholesale fabric, fabric exporter India',
+    'S N Fabrics — Surat-based textile trading house specialising in luxury velvets, Makhan, 9000, 11000, Fendy, Sindoor and more. Pan-India delivery, global exports.',
+  keywords: 'S N Fabrics, premium velvet fabric, Surat textile, Makhan velvet, wholesale fabric, fabric exporter India',
 };
 
 export const dynamic = 'force-dynamic';
@@ -45,7 +45,7 @@ export default async function HomePage() {
                 <span style={{ color: 'var(--gold-muted)' }}>A Legacy in Making</span>
               </h2>
               <p style={{ fontSize: '1rem', color: '#555', lineHeight: 1.9, marginBottom: '24px' }}>
-                SN Fabrics is a Surat-based textile house redefining modern fabric trading. With a strong foundation in rich velvet
+                S N Fabrics is a Surat-based textile house redefining modern fabric trading. With a strong foundation in rich velvet
                 categories like Makhan, 9000, and 11000 velvet, we have built a reputation for superior quality, refined textures,
                 and consistent excellence.
               </p>
@@ -61,7 +61,6 @@ export default async function HomePage() {
             {/* Stats cards */}
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
               {[
-                { number: '3+', label: 'Years of Trust', icon: '🏆', dark: true },
                 { number: '100+', label: 'Happy Clients', icon: '🤝', dark: false },
                 { number: '10+', label: 'Fabric Varieties', icon: '🎨', dark: true },
                 { number: '🌍', label: 'Global Exports Ready', icon: '', dark: false },

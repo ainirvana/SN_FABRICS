@@ -56,12 +56,10 @@ export default function ProductCard({ product, compact = false }: ProductCardPro
 
         {/* ── Image / Shade Card Area ── */}
         <div
-          onClick={() => hasImages && setModalOpen(true)}
           style={{
             height: compact ? '180px' : '220px',
             position: 'relative',
             overflow: 'hidden',
-            cursor: hasImages ? 'zoom-in' : 'default',
             background: `linear-gradient(135deg, var(--maroon-dark) 0%, var(--maroon) 40%, var(--maroon-light) 100%)`,
           }}
         >
@@ -174,12 +172,18 @@ export default function ProductCard({ product, compact = false }: ProductCardPro
         {/* ── Content ── */}
         <div style={{ padding: compact ? '18px' : '22px', flex: 1, display: 'flex', flexDirection: 'column', gap: '10px' }}>
           <div>
-            <h3 className="font-serif" style={{
+            <h3 className="font-serif" 
+              onClick={() => hasImages && setModalOpen(true)}
+              style={{
               fontSize: compact ? '1.1rem' : '1.25rem',
               color: 'var(--maroon)',
               marginBottom: '2px',
               fontWeight: 700,
               lineHeight: 1.2,
+              cursor: hasImages ? 'pointer' : 'default',
+              textDecoration: hasImages ? 'underline' : 'none',
+              textDecorationColor: 'rgba(67,36,48,0.3)',
+              textUnderlineOffset: '4px',
             }}>
               {product.name}
             </h3>
@@ -306,10 +310,6 @@ export default function ProductCard({ product, compact = false }: ProductCardPro
               📸 View {images.length} Shade Card Photo{images.length > 1 ? 's' : ''}
             </button>
           )}
-
-          <p style={{ fontSize: '0.62rem', color: '#bbb', textAlign: 'center', marginTop: '2px' }}>
-            *Sample kit available on chargeable basis
-          </p>
         </div>
       </div>
 

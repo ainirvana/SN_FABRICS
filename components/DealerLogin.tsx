@@ -86,7 +86,7 @@ export default function DealerLogin() {
                  <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/5 rounded-full blur-3xl -z-10" />
 
                 <div className="mb-10">
-                  <span className="text-secondary tracking-[0.2em] uppercase text-xs mb-2 block font-bold">SN Fabrics</span>
+                  <span className="text-secondary tracking-[0.2em] uppercase text-xs mb-2 block font-bold">S N Fabrics</span>
                   <h2 className="font-serif text-4xl text-white">Wholesale Login</h2>
                 </div>
 

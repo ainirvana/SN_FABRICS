@@ -266,29 +266,7 @@ export default function Hero() {
           </a>
         </div>
 
-        {/* Stats Strip */}
-        <div style={{
-          display: 'flex', gap: '48px', justifyContent: 'center', flexWrap: 'wrap',
-          marginTop: '56px',
-          borderTop: '1px solid rgba(255,204,69,0.15)',
-          paddingTop: '32px',
-        }}>
-          {[
-            { num: '3+', label: 'Years of Trust' },
-            { num: '100+', label: 'Happy Clients' },
-            { num: '10+', label: 'Fabric Varieties' },
-            { num: '🌍', label: 'Global Exports' },
-          ].map((s) => (
-            <div key={s.label} style={{ textAlign: 'center' }}>
-              <div style={{ fontSize: 'clamp(1.4rem, 2.5vw, 2rem)', fontWeight: 800, color: 'var(--gold)', fontFamily: 'var(--font-serif)' }}>
-                {s.num}
-              </div>
-              <div style={{ fontSize: '0.7rem', color: 'rgba(255,240,221,0.55)', letterSpacing: '0.12em', textTransform: 'uppercase', marginTop: '4px' }}>
-                {s.label}
-              </div>
-            </div>
-          ))}
-        </div>
+
 
         {/* Gold divider */}
         <div style={{ marginTop: '40px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '16px' }}>

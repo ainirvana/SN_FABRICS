@@ -34,7 +34,7 @@ export default async function AdminDashboard() {
           Dashboard
         </h1>
         <p style={{ fontSize: '0.875rem', color: '#888' }}>
-          Welcome back! Here&apos;s an overview of your SN Fabrics store.
+          Welcome back! Here&apos;s an overview of your S N Fabrics store.
         </p>
       </div>
 

@@ -35,7 +35,7 @@ export default async function BlogsPage() {
         <div style={{ maxWidth: '700px', margin: '0 auto', padding: '0 24px', textAlign: 'center', position: 'relative', zIndex: 1 }}>
           <p style={{ fontSize: '0.75rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#ffcc45', marginBottom: '16px', fontWeight: 700 }}>✦ Insights</p>
           <h1 className="font-serif" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', color: '#fff0dd', marginBottom: '24px', lineHeight: 1.15 }}>
-            The SN Fabrics <span style={{ color: '#ffcc45' }}>Blog</span>
+            The S N Fabrics <span style={{ color: '#ffcc45' }}>Blog</span>
           </h1>
           <p style={{ fontSize: '1.05rem', color: 'rgba(255,240,221,0.8)', lineHeight: 1.8 }}>
             Fabric guides, industry insights, care tips and more — straight from the heart of Surat&apos;s textile industry.

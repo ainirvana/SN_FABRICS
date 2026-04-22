@@ -51,7 +51,7 @@ export default function About() {
               className="space-y-6 text-foreground/80 font-light text-lg leading-relaxed max-w-xl"
             >
               <p>
-                As an industry-leading wholesaler, SN Fabrics has been the silent backbone behind the most magnificent garments and opulent interiors.
+                As an industry-leading wholesaler, S N Fabrics has been the silent backbone behind the most magnificent garments and opulent interiors.
               </p>
               <p>
                 We do not just sell fabric; we provide the canvas for visionaries. Our velvet is meticulously woven to capture light, define form, and deliver an unparalleled tactile experience.
