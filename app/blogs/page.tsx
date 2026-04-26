@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { adminSupabase } from '@/lib/supabase/admin';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Blogs | S N Fabrics — Textile Insights & Fabric Guides',
@@ -55,38 +56,44 @@ export default async function BlogsPage() {
           ) : (
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))', gap: '32px' }}>
               {blogs.map((blog, i) => (
-                <article key={blog.id} className="card-hover" style={{ backgroundColor: '#fff', borderRadius: '12px', overflow: 'hidden', border: '1px solid rgba(67,36,48,0.1)', display: 'flex', flexDirection: 'column' }}>
-                  {/* Cover */}
-                  <div style={{ height: '200px', position: 'relative', overflow: 'hidden', background: GRADIENTS[i % GRADIENTS.length] }}>
-                    {blog.cover_url ? (
-                      <Image src={blog.cover_url} alt={blog.title} fill style={{ objectFit: 'cover' }} />
-                    ) : (
-                      <>
-                        <div style={{ position: 'absolute', inset: 0, backgroundImage: dotPattern, backgroundSize: '20px 20px' }} />
-                        <span style={{ fontSize: '3.5rem', position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>📖</span>
-                      </>
-                    )}
-                  </div>
+                <Link
+                  key={blog.id}
+                  href={`/blogs/${blog.slug}`}
+                  style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column' }}
+                >
+                  <article className="card-hover" style={{ backgroundColor: '#fff', borderRadius: '12px', overflow: 'hidden', border: '1px solid rgba(67,36,48,0.1)', display: 'flex', flexDirection: 'column', flex: 1, cursor: 'pointer' }}>
+                    {/* Cover */}
+                    <div style={{ height: '200px', position: 'relative', overflow: 'hidden', background: GRADIENTS[i % GRADIENTS.length] }}>
+                      {blog.cover_url ? (
+                        <Image src={blog.cover_url} alt={blog.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 400px" style={{ objectFit: 'cover' }} loading="eager" />
+                      ) : (
+                        <>
+                          <div style={{ position: 'absolute', inset: 0, backgroundImage: dotPattern, backgroundSize: '20px 20px' }} />
+                          <span style={{ fontSize: '3.5rem', position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>📖</span>
+                        </>
+                      )}
+                    </div>
 
-                  <div style={{ padding: '28px', flex: 1, display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
-                      {blog.tags?.slice(0, 1).map((t: string) => (
-                        <span key={t} style={{ backgroundColor: 'rgba(67,36,48,0.07)', color: 'var(--maroon)', padding: '4px 12px', borderRadius: '999px', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-                          {t}
+                    <div style={{ padding: '28px', flex: 1, display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
+                        {blog.tags?.slice(0, 1).map((t: string) => (
+                          <span key={t} style={{ backgroundColor: 'rgba(67,36,48,0.07)', color: 'var(--maroon)', padding: '4px 12px', borderRadius: '999px', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+                            {t}
+                          </span>
+                        ))}
+                        <span style={{ fontSize: '0.75rem', color: '#aaa' }}>{blog.read_time ?? '5 min read'}</span>
+                      </div>
+                      <h2 className="font-serif" style={{ fontSize: '1.25rem', color: 'var(--maroon)', lineHeight: 1.3 }}>{blog.title}</h2>
+                      <p style={{ fontSize: '0.875rem', color: '#666', lineHeight: 1.7, flex: 1 }}>{blog.excerpt}</p>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '16px', borderTop: '1px solid rgba(67,36,48,0.08)' }}>
+                        <span style={{ fontSize: '0.75rem', color: '#aaa' }}>
+                          {new Date(blog.created_at).toLocaleDateString('en-IN', { day: '2-digit', month: 'long', year: 'numeric' })}
                         </span>
-                      ))}
-                      <span style={{ fontSize: '0.75rem', color: '#aaa' }}>{blog.read_time ?? '5 min read'}</span>
+                        <span style={{ color: 'var(--maroon)', fontSize: '0.875rem', fontWeight: 700 }}>Read More →</span>
+                      </div>
                     </div>
-                    <h2 className="font-serif" style={{ fontSize: '1.25rem', color: 'var(--maroon)', lineHeight: 1.3 }}>{blog.title}</h2>
-                    <p style={{ fontSize: '0.875rem', color: '#666', lineHeight: 1.7, flex: 1 }}>{blog.excerpt}</p>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '16px', borderTop: '1px solid rgba(67,36,48,0.08)' }}>
-                      <span style={{ fontSize: '0.75rem', color: '#aaa' }}>
-                        {new Date(blog.created_at).toLocaleDateString('en-IN', { day: '2-digit', month: 'long', year: 'numeric' })}
-                      </span>
-                      <span style={{ color: 'var(--maroon)', fontSize: '0.875rem', fontWeight: 600 }}>Read More →</span>
-                    </div>
-                  </div>
-                </article>
+                  </article>
+                </Link>
               ))}
             </div>
           )}

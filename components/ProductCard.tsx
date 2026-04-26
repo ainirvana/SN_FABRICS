@@ -227,6 +227,20 @@ export default function ProductCard({ product, compact = false }: ProductCardPro
                 {product.weight}
               </span>
             )}
+            {/* Sample Kit badge */}
+            <span style={{
+              backgroundColor: 'rgba(67,36,48,0.9)',
+              border: '1.5px solid rgba(255,204,69,0.7)',
+              color: '#ffcc45',
+              padding: '4px 12px',
+              borderRadius: '4px',
+              fontSize: '0.72rem',
+              fontWeight: 800,
+              letterSpacing: '0.04em',
+              textTransform: 'uppercase',
+            }}>
+              🎁 Sample Kit Available
+            </span>
           </div>
 
           {/* Used for */}

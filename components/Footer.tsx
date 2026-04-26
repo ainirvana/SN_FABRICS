@@ -94,11 +94,11 @@ export default function Footer() {
               Review Us
             </h3>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              <a href="https://g.page/r/YOUR_GOOGLE_REVIEW_LINK" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-muted)', textDecoration: 'none', fontSize: '0.875rem' }}>
+              <a href="https://g.page/r/Cf1uXRf1tp4XEBM/review" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-muted)', textDecoration: 'none', fontSize: '0.875rem' }}>
                 ⭐ Review us on Google
               </a>
-              <a href="https://www.tradeindia.com/YOUR_TRADE_INDIA_LINK" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-muted)', textDecoration: 'none', fontSize: '0.875rem' }}>
-                🏢 Trade India Profile
+              <a href="https://www.indiamart.com/ambika-flock-velvet/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-muted)', textDecoration: 'none', fontSize: '0.875rem' }}>
+                🏢 IndiaMart Profile
               </a>
             </div>
           </div>
